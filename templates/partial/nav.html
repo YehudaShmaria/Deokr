@@ -1,0 +1,71 @@
+{% load static %}
+<style>
+  li a{
+    font-size: 17px;
+  }
+  .dropdown-submenu{
+    position: relative;
+}
+.dropdown-submenu a::after{
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 3px;
+    top: 40%;
+}
+.dropdown-submenu:hover .dropdown-menu, .dropdown-submenu:focus .dropdown-menu{
+    display: flex;
+    flex-direction: column;
+    position: absolute !important;
+    margin-top: -30px;
+    left: 100%;
+}
+@media (max-width: 992px) {
+    .dropdown-menu{
+        width: 50%;
+    }
+    .dropdown-menu .dropdown-submenu{
+        width: auto;
+    }
+}
+</style>
+<nav class="navbar navbar-expand-md sticky-top bg-dark navbar-dark mt-2 text-right">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <h1 class="mx-auto text-center"><a class="nabar" href="#" style="color:white; text-align:center;">Dekor</a></h1>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">דף הבית</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">וילונות</a>
+          <ul class="dropdown-menu text-right">
+            <li><a class="dropdown-item" href="{% url 'tfira' %}">תפירה</a></li>
+            <li><a class="dropdown-item" href="{% url 'zebra' %}">זברה</a></li>
+            <li><a class="dropdown-item" href="{% url 'roma' %}">רומאי</a></li>
+            <li class="dropdown-submenu dropleft"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">וניצאני</a>
+              <ul class="dropdown-menu text-right">
+                <a class="dropdown-item" href="{% url 'van' name='alu' %}">אלומיניום</a>
+                <a class="dropdown-item" href="{% url 'van' name='de' %}">דמוי עץ</a>
+                <a class="dropdown-item" href="{% url 'van' name='e' %}">עץ</a>
+                <a class="dropdown-item" href="{% url 'van' name='empti' %}">הכל</a>
+              </ul>
+            </li>
+            <li><div class="dropdown-divider"></div></li>
+            <li><a class="dropdown-item" href="{% url 'all' %}">כל הוילונות</a></li>
+          </ul>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'maps' %}">מפות</a>
+    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">טיפה עלינו</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">צור קשר</a>
+        </li>    
+      </ul>
+    </div> 
+  </nav>

@@ -1,0 +1,103 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+<!-- background-color:#263238; -->
+<style>
+    /*footer*/
+.col_white_amrc { color:#FFF;}
+footer { width:100%; background-color:#263238;  min-height:250px; padding:10px 0px 25px 0px ;}
+.pt2 { padding-top:40px ; margin-bottom:20px ;}
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.mb10 { padding-bottom:15px ;}
+.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+.footer_ul_amrc li {padding:0px 0px 5px 0px;}
+.footer_ul_amrc li a{ color:#CCC;}
+.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.fleft { float:left;}
+.padding-right { padding-right:10px; }
+
+.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+.footer_ul2_amrc li p { display:table; }
+.footer_ul2_amrc li a:hover { text-decoration:none;}
+.footer_ul2_amrc li i { margin-top:5px;}
+
+.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
+</style>
+
+<!--footer starts from here-->
+<footer class="footer">
+    <div class="container bottom_border">
+        <div class="row">
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">חפשו אותנו</h5>
+                <!--headin5_amrc-->
+                <!-- <p class="mb10">בווילונות זברה יש לשים לב שרוחב הבד שייתקבל יהיה כ- 3 עד 4 ס"מ פחות מרוחב הווילון שתזמינו.
+                    לדוגמה: במידה והזמנת וילון ברוחב 100 ס"מ, רוחב הבד שיתקבל יהיה כ-96 ס"מ (עד 4 ס"מ פחות בסה"כ).
+                    וזה כי רוחב הווילון כולל גם את מנגנון ההפעלה (שרשרת + אביזר הרכבה).
+                    ראה: שרטוט שלפניכם בתחתית הדף.</p> -->
+                <p><i class="fa fa-location-arrow"></i> <a style="color:white;" href="https://www.google.com/maps/d/u/0/edit?mid=1Xa2PyUcZs370k2WJzkH9mWBJabuzsvz1&usp=sharing"> מלכי ישראל 34 ירושלים</a></p>
+                <p><i class="fa fa-phone"></i> <a style="color:white;" href="tel:0584681758">0584681758</a></p>
+                <p><i class="fa fa fa-envelope"></i> <a href="mailto:yehudas1999@gmail.com" style="color:white;">yehudas1999@gmail.com</a></p>
+            </div>
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">צרו קשר</h5>
+                <p> שעות הפעילות שלנו א'- ה' 08:30 - 18:00</p>
+                <p>ימי שישי 08:00 - 13:00</p>
+                <p>טלפון לשירות לקוחת : 1-801-711-757 </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+            <ul class="foote_bottom_ul_amrc">
+                <li><a href="{% url 'home' %}">דף הבית</a></li>
+                <li><a href="{% url 'all' %}">וילונות</a></li>
+                <!-- <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">וילונות</a>
+                    <ul class="dropdown-menu text-right">
+                      <li><a class="dropdown-item" href="{% url 'tfira' %}">תפירה</a></li>
+                      <li><a class="dropdown-item" href="{% url 'zebra' %}">זברה</a></li>
+                      <li><div class="dropdown-divider"></div></li>
+                      <li><a class="dropdown-item" href="{% url 'all' %}">כל הוילונות</a></li>
+                    </ul>
+                  </li> -->
+                <li><a href="{% url 'maps' %}">מפות</a></li>
+                <li><a href="{% url 'about' %}">טיפה עלינו</a></li>
+                <li><a href="{% url 'contact' %}">צור קשר</a></li>
+            </ul>
+
+
+            <p class="text-center">Copyright @2017 | Designed With by <a href="#">Your Company Name</a></p>
+            <ul class="social_footer_ul">
+                <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

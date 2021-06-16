@@ -1,0 +1,98 @@
+{% extends '../partial/base.html' %}
+{% load static %}
+
+{% block title %}וילונות{% endblock %}
+
+{% block content %}
+
+<style>
+  #Igert {
+    border-radius: 5px;
+    height: 250px;
+  }
+  #Cotert {
+    margin-top: 30px;
+   /* background-color: lemonchiffon;*/
+    border: lightblue solid 3px;
+  }
+</style>
+
+<script>
+
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+
+
+<div id="Cotert" class="jumbotron text-center hoverable p-4 shadow-lg p-3 mb-5 rounded">
+  <div class="row">
+
+    <div class="col-md-4 offset-md-1 mx-3 my-3">
+      <div class="view overlay">
+        <img id="Igert" src=""class="img-fluid"/>
+        <a><div class="mask rgba-white-slight"></div></a>
+      </div>
+    </div>
+
+    <div class="col-md-7 text-md-right ml-3 mt-3">
+      <h1 style="font-size: 40px;" class="text-primary text-center font-weight-bold">
+        וילונות Roma
+      </h1>
+      <h2 class="display-4 text-success text-center">הכי מבוקש בארץ</h2>
+       <!-- <p class="lead text-center">פה נכניס טקסט שיחליטו הלקוחות</p> -->
+       <p class="text-center">
+          בווילונות זברה יש לשים לב שרוחב הבד שייתקבל יהיה כ- 3 עד 4 ס"מ פחות מרוחב הווילון שתזמינו.
+          לדוגמה: במידה והזמנת וילון ברוחב 100 ס"מ, רוחב הבד שיתקבל יהיה כ-96 ס"מ (עד 4 ס"מ פחות בסה"כ).
+          וזה כי רוחב הווילון כולל גם את מנגנון ההפעלה (שרשרת + אביזר הרכבה).
+          ראה: שרטוט שלפניכם בתחתית הדף.
+       </p>
+       
+    </div>
+
+  </div>
+</div>
+
+<div style="top: 70px" class="sticky-top">
+  <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+      <a href=" {% url 'tfira' %}" role="button" class="btn btn-primary">וילונות תפירה</a>
+      <a href=" {% url 'zebra' %}" role="button" class="btn btn-primary">וילונות זברה</a>
+      <a href=" {% url 'roma' %}" role="button" class="btn btn-primary">וילונות Roma</a>
+      <a href="{% url 'van' name='empti' %}" role="button" class="btn btn-primary">וילונות וניצאני</a>
+    </div>
+  </div>
+
+ <section class="wrapper">
+  <div class="container-fostrap">
+      <div class="content">
+          <div class="container">
+              <div class="row">
+                {% for obj in Vilons %}
+                  <div class="col-xs-12 col-sm-4 ">
+                      <div class="card">
+                          <a class="img-card" href="#">
+                          <img src="{{obj.img}}"  alt="this"/>
+                        </a>
+                          <div style="text-align: center;" class="card-content">
+                              <h4 class="card-title">
+                                  <a href="#"> {{obj.title}}
+                                </a>
+                              </h4>
+                              <p class="">
+                                 {{obj.descrption}}
+                              </p>
+                          </div>
+                          <div class="card-read-more">
+                              <a href="{{obj.GetAbsoluteUrl}}" class="btn btn-link btn-block">
+                                 קרא עוד...
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,176 @@
+{% extends '../partial/base.html' %}
+{% load static %}
+
+{% block title %}וילונות{% endblock %}
+
+{% block content %}
+
+<style>
+  #Igert {
+    border-radius: 5px;
+    height: 250px;
+  }
+  #Cotert {
+    margin-top: 30px;
+   /* background-color: lemonchiffon;*/
+    border: lightblue solid 3px;
+  }
+  .text {
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+}
+.fadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:100%;
+    background:whitesmoke;
+    -moz-animation: showHide 10s ease-in alternate infinite; /* Firefox */
+    -webkit-animation: showHide 10s ease-in alternate infinite; /* Safari and Chrome */
+    -ms-animation: showHide 10s ease-in alternate infinite; /* IE10 */
+    -o-animation: showHide 10s ease-in alternate infinite; /* Opera */
+    animation: showHide 10s ease-in alternate infinite;
+}
+
+@-webkit-keyframes showHide { /* Chrome, Safari */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-moz-keyframes showHide { /* FF */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-ms-keyframes showHide { /* IE10 */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-o-keyframes showHide { /* Opera */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@keyframes showHide {
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+  .hideme
+{
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    -webkit-transition: width 1000ms ease-in, opacity 1s ease-out;
+    -moz-transition: width 1000ms ease-in, opacity 1s ease-out;
+    -o-transition: width 1000ms ease-in, opacity 1s ease-out;
+    transition: width 1000ms ease-in, opacity 1s ease-out;
+}
+.active
+{
+  opacity: 1;
+  width: 100%;
+}
+</style>
+<script>
+  $(document).ready(function() {   
+    $(window).scroll( function() {
+      $('.hideme').each( function(i){
+        
+        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+        
+        if( bottom_of_window > bottom_of_object ){
+          $(this).addClass("active");
+        }
+      }); 
+    });
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+
+
+<div id="Cotert" class="jumbotron text-center hoverable p-4 shadow-lg p-3 mb-5 rounded">
+  <div class="row">
+
+    <div class="col-md-4 offset-md-1 mx-3 my-3">
+      <div class="view overlay">
+        <img id="Igert" src="{% static '/images/hand2.png' %}"class="img-fluid"/>
+        <a><div class="mask rgba-white-slight"></div></a>
+      </div>
+    </div>
+
+    <div class="col-md-7 text-md-right ml-3 mt-3">
+      <h1 style="font-size: 40px;" class="text-primary text-center font-weight-bold">
+        וילונות תפירה
+      </h1>
+      <h2 class="display-4 text-success text-center">גימור של מקצוענים</h2>
+       <!-- <p class="lead text-center">פה נכניס טקסט שיחליטו הלקוחות</p> -->
+       <div class="text">
+        <p class="text-center">
+          בווילונות זברה יש לשים לב שרוחב הבד שייתקבל יהיה כ- 3 עד 4 ס"מ פחות מרוחב הווילון שתזמינו.
+          לדוגמה: במידה והזמנת וילון ברוחב 100 ס"מ, רוחב הבד שיתקבל יהיה כ-96 ס"מ (עד 4 ס"מ פחות בסה"כ).
+          וזה כי רוחב הווילון כולל גם את מנגנון ההפעלה (שרשרת + אביזר הרכבה).
+          ראה: שרטוט שלפניכם בתחתית הדף.
+       </p>
+        <div class="fadingEffect"></div>
+     </div>
+     
+       
+    </div>
+
+  </div>
+</div>
+
+
+<div style="top: 70px" class="sticky-top">
+  <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+      <a href=" {% url 'tfira' %}" role="button" class="btn btn-primary">וילונות תפירה</a>
+      <a href=" {% url 'zebra' %}" role="button" class="btn btn-primary">וילונות זברה</a>
+      <a href=" {% url 'roma' %}" role="button" class="btn btn-primary">וילונות Roma</a>
+      <a href="{% url 'van' name='empti' %}" role="button" class="btn btn-primary">וילונות וניצאני</a>
+    </div>
+  </div>
+
+ <section class="wrapper">
+  <div class="container-fostrap">
+      <div class="content">
+          <div class="container">
+              <div class="row">
+                {% for obj in Vilons %}
+                  <div class="hideme col-xs-12 col-sm-4 ">
+                      <div class="card">
+                          <a class="img-card" href="#">
+                          <img src="{{obj.img}}"  alt="this"/>
+                        </a>
+                          <div style="text-align: center;" class="card-content">
+                              <h4 class="card-title">
+                                  <a href="#"> {{obj.title}}
+                                </a>
+                              </h4>
+                              <p class="">
+                                 {{obj.descrption}}
+                              </p>
+                          </div>
+                          <div class="card-read-more">
+                              <a href="{{obj.GetAbsoluteUrl}}" class="btn btn-link btn-block">
+                                 קרא עוד...
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+{% endblock %}
