@@ -120,7 +120,7 @@
                 <div class="carousel-inner">
 
                     <div class="item active">
-                        <img onload="Test()" src="{% static '/images/1.jpg' %}"  style="width:100%;">
+                        <img src="{% static '/images/1.jpg' %}"  style="width:100%;">
                     </div>
             
                     <div class="item">
@@ -194,10 +194,11 @@
 </div>
 
 <script>
-    function Test()
+    $(document).ready( function()
     {
      $('#Igert').slideDown(2000);
-    }
+    })
+   
    </script>
 
 {% endblock %}
