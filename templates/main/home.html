@@ -26,22 +26,6 @@
       border: black solid 1px;
       height: 180px;
     }
-
-  /*#Test {
-      position: relative; 
-  }
-  
-  #Test::before {    
-        content: "";
-        background-image: url("{% static '/images/Logo.PNG' %}");
-        background-size: cover;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.5;
-  }*/
   
     #test1 {
         position: relative;
@@ -58,8 +42,6 @@
       transform: scale(1.1); 
     }
    </style>
-
-  
 
   <div class="container text-center">
 
@@ -127,10 +109,12 @@
                     <div class="item">
                         <img src="{% static '/images/9.jpg' %}" style="width:100%;">
                     </div>
-                
+
                     <div class="item">
                         <img src="{% static '/images/8.jpg' %}" style="width:100%;">
                     </div>
+
+                  
                 </div>
 
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -153,7 +137,7 @@
             <div class="d-flex sale ">
             </div>
             <div>
-               <a href="#"><img class=' mx-auto img-thumbnail' src="{% static '/images/9.jpg' %}" width="auto" height="auto" /></a> 
+               <a href="{% url 'tfira' %}"><img class=' mx-auto img-thumbnail' src="{% static '/images/9.jpg' %}" width="auto" height="auto" /></a> 
                 <div class="centered"><h2>וילונות תפירה</h2></div>
             </div>
             
@@ -162,7 +146,7 @@
           <div class="zoom card mx-auto col-md-4 col-lg-4 col-xs-6 mt-5 pt-4 w3-animate-zoom">
             <div class="d-flex sale "></div>
             <div>
-               <a href="#"><img class=' mx-auto img-thumbnail' src="{% static '/images/17.jpg' %}" width="auto" height="auto" /></a> 
+               <a href="{% url 'zebra' %}"><img class=' mx-auto img-thumbnail' src="{% static '/images/17.jpg' %}" width="auto" height="auto" /></a> 
                 <div class="centered"><h2>וילונות זברה</h2></div>
             </div>
         </div>
@@ -170,7 +154,7 @@
         <div class="zoom card mx-auto col-md-4 col-lg-4 col-xs-6 mt-5 pt-4 w3-animate-left">
             <div class="d-flex sale "></div>
             <div>
-               <a href="#"><img class=' mx-auto img-thumbnail' src="{% static '/images/4.jpg' %}" width="auto" height="auto" /></a> 
+               <a href="{% url 'roma' %}"><img class=' mx-auto img-thumbnail' src="{% static '/images/4.jpg' %}" width="auto" height="auto" /></a> 
                 <div class="centered"><h2>וילונות רומאי</h2></div>
             </div>
         </div>
@@ -178,7 +162,7 @@
         <div class="zoom card mx-auto col-md-4 col-lg-4 col-xs-6 mt-5 pt-4 w3-animate-left">
             <div class="d-flex sale "></div>
             <div>
-               <a href="#"><img class=' mx-auto img-thumbnail' src="{% static '/images/8.jpg' %}" width="auto" height="auto" /></a> 
+               <a href="{% url 'van' name='empti' %}"><img class=' mx-auto img-thumbnail' src="{% static '/images/8.jpg' %}" width="auto" height="auto" /></a> 
                 <div class="centered"><h2>וילונות וניצאני</h2></div>
             </div>
         </div>
@@ -186,7 +170,7 @@
         <div class="zoom card mx-auto col-md-4 col-xs-6 mt-5 pt-4 w3-animate-right">
           <div class="d-flex sale "></div>
           <div>
-             <a href="#"><img class=' mx-auto img-thumbnail' src="{% static '/images/8.jpg' %}" width="auto" height="auto" /></a> 
+             <a href="{% url 'maps' %}"><img class=' mx-auto img-thumbnail' src="{% static '/images/8.jpg' %}" width="auto" height="auto" /></a> 
               <div class="centered"><h2>מפות</h2></div>
           </div>
       </div>
@@ -199,6 +183,6 @@
     {
      $('#Igert').slideDown(2000);
     })
-    </script> -->
+    </scr> -->
 
 {% endblock %}

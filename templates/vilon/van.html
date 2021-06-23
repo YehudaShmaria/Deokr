@@ -351,14 +351,19 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-md-12 col-xs-12">
+    <div style="top: 70px" class="sticky-top">
+      <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+          <a href=" {% url 'tfira' %}" role="button" class="btn btn-primary">וילונות תפירה</a>
+          <a href=" {% url 'zebra' %}" role="button" class="btn btn-primary">וילונות זברה</a>
+          <a href=" {% url 'roma' %}" role="button" class="btn btn-primary">וילונות Roma</a>
+          <a href="{% url 'van' name='empti' %}" role="button" class="btn btn-primary">וילונות וניצאני</a>
+        </div>
+      </div>
+  </div>
 
-<div style="top: 70px" class="sticky-top">
-  <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-      <a href=" {% url 'tfira' %}" role="button" class="btn btn-primary">וילונות תפירה</a>
-      <a href=" {% url 'zebra' %}" role="button" class="btn btn-primary">וילונות זברה</a>
-      <a href=" {% url 'roma' %}" role="button" class="btn btn-primary">וילונות Roma</a>
-    </div>
-    <br>
+  <div class="col-md-12 col-xs-12">
     <div style="margin-top: 5px;" class="btn-group btn-group-lg" role="group" aria-label="Basic example">
       <a href="{% url 'van' name='empti' %}" role="button" class="btn btn-primary">וילונות וניצאני</a>
       <a role="button" class="btn btn-primary" href="{% url 'van' name='alu' %}">אלומיניום</a>
@@ -366,6 +371,7 @@
       <a role="button" class="btn btn-primary" href="{% url 'van' name='e' %}">עץ</a>
     </div>
   </div>
+</div>
 
 <div class="container">
   {% for obj in Vilons %}
@@ -384,9 +390,9 @@
           <div class="col-md-7 col-sm-12 col-xs-12">
           <div class="product-deatil">
               <h5 class="name">
-                <a href="#">
-                  {{obj.title}} <span>Category</span>
-                </a>
+              
+                  {{obj.name}} <span>Category</span>
+               
               </h5>
               <p class="price-container">
                 <span>$99</span>
@@ -394,7 +400,7 @@
               <span class="tag1"></span> 
           </div>
           <div class="description">
-            <p>{{obj.descrption}}</p>
+            <h5>{{obj.title}}</h5>
           </div>
           <div class="product-info smart-form">
             <div class="row">

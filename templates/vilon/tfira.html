@@ -130,15 +130,17 @@
   </div>
 </div>
 
-
-<div style="top: 70px" class="sticky-top">
-  <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-      <a href=" {% url 'tfira' %}" role="button" class="btn btn-primary">וילונות תפירה</a>
-      <a href=" {% url 'zebra' %}" role="button" class="btn btn-primary">וילונות זברה</a>
-      <a href=" {% url 'roma' %}" role="button" class="btn btn-primary">וילונות Roma</a>
-      <a href="{% url 'van' name='empti' %}" role="button" class="btn btn-primary">וילונות וניצאני</a>
+<div class="col-md-12 col-xs-12">
+  <div style="top: 70px" class="sticky-top">
+    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+        <a href=" {% url 'tfira' %}" role="button" class="btn btn-primary">וילונות תפירה</a>
+        <a href=" {% url 'zebra' %}" role="button" class="btn btn-primary">וילונות זברה</a>
+        <a href=" {% url 'roma' %}" role="button" class="btn btn-primary">וילונות Roma</a>
+        <a href="{% url 'van' name='empti' %}" role="button" class="btn btn-primary">וילונות וניצאני</a>
+      </div>
     </div>
-  </div>
+</div>
+
 
  <section class="wrapper">
   <div class="container-fostrap">
@@ -153,12 +155,11 @@
                         </a>
                           <div style="text-align: center;" class="card-content">
                               <h4 class="card-title">
-                                  <a href="#"> {{obj.title}}
-                                </a>
+                                   {{obj.name}}
                               </h4>
-                              <p class="">
-                                 {{obj.descrption}}
-                              </p>
+                              <h5 class="">
+                                 {{obj.title}}
+                            </h5>
                           </div>
                           <div class="card-read-more">
                               <a href="{{obj.GetAbsoluteUrl}}" class="btn btn-link btn-block">
