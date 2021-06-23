@@ -14,7 +14,7 @@ class Curtain(models.Model):
     type = models.CharField(choices=YEAR_IN_SCHOOL_CHOICES, max_length=30,default='tefira')
     title = models.TextField()
     descrption = models.TextField()
-    img = models.ImageField(upload_to='static/images')
+    img = models.ImageField(upload_to='staticfiles/')
 
     def GetAbsoluteUrl(self):
         return reverse("detailes",kwargs={"id":self.id})
